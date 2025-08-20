@@ -8,13 +8,14 @@ import java.util.Scanner;
 
 public class RegistrationController {
     private Students list = null;
-    private Mountains listM;
+    private Mountains listM = null;
 
     public RegistrationController(Students students, Mountains mountains) {
         this.list = students;
         this.listM = mountains;
     }
 
+    //Function 1
     public void Registration(){
         Scanner sc = new Scanner(System.in);
         String studentID;
@@ -24,6 +25,7 @@ public class RegistrationController {
         String mountainCode;
         double tuitionFee;
 
+        // ---- ID ----
         while(true){
             System.out.print(MenuView.ENTER_STUDENT_ID);
             studentID = sc.nextLine();
@@ -41,6 +43,20 @@ public class RegistrationController {
                 break;
         }
 
+        // ---- Name ----
+        while(true){
+            System.out.print(MenuView.ENTER_NAME);
+            name = sc.nextLine();
+
+            if(!InputValidator.validName(name)){
+                System.out.println(MenuView.INVALID_INPUT);
+                continue;
+            }
+
+            break;
+        }
+
+        // ---- Phone ----
         while (true) {
             System.out.print(MenuView.ENTER_PHONE);
             phoneNumber = sc.nextLine();
@@ -50,6 +66,7 @@ public class RegistrationController {
             System.out.println(MenuView.INVALID_INPUT);
         }
 
+        // ---- Mail ----
         while (true) {
             System.out.print(MenuView.ENTER_EMAIL);
             email = sc.nextLine();
@@ -59,6 +76,7 @@ public class RegistrationController {
             System.out.println(MenuView.INVALID_INPUT);
         }
 
+        // ---- Code ----
         while (true){
             System.out.print(MenuView.ENTER_MOUNTAIN_CODE);
             mountainCode = sc.nextLine();
@@ -68,7 +86,7 @@ public class RegistrationController {
                 continue;
             }
 
-            if (!listM.exists(mountainCode)) {
+            if (listM.checkExists(mountainCode)) {
                 System.out.println(MenuView.INVALID_CODE);
                 listM.display();
                 continue;
@@ -78,12 +96,13 @@ public class RegistrationController {
         }
         tuitionFee = InputValidator.validCalculateTuition(phoneNumber);
 
-        Student student = new Student(studentID, email, phoneNumber, email, mountainCode, tuitionFee);
+        Student student = new Student(studentID, name, phoneNumber, email, mountainCode, tuitionFee);
         list.addStudent(student);
 
         System.out.println(MenuView.SUCCESS_ADD);
     }
 
+    //Function 2
     public void updateStudent(Student s) {
         Scanner sc = new Scanner(System.in);
         String input;
@@ -134,7 +153,7 @@ public class RegistrationController {
                 System.out.println(MenuView.INVALID_INPUT);
                 continue;
             }
-            if (!listM.exists(input)) {
+            if (listM.checkExists(input)) {
                 System.out.println(MenuView.INVALID_CODE);
                 listM.display();
                 continue;
@@ -148,4 +167,5 @@ public class RegistrationController {
 
         System.out.println(MenuView.SUCCESS_UPDATE);
     }
+
 }

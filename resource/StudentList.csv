@@ -1,11 +1,10 @@
-studentID,name,phoneNumber,email,mountainCode,tuitionFee
-ST001,John Smith,1234567890,john.smith@example.com,C101,1500.00
-ST002,Jane Doe,0987654321,jane.doe@example.com,C102,1200.00
-ST003,Peter Jones,0112233445,peter.j@example.com,C105,1800.00
-ST004,Mary Williams,0223344556,mary.w@example.com,C103,1100.00
-ST005,Chris Brown,0334455667,chris.b@example.com,C108,1650.00
-ST006,Sarah Davis,0445566778,sarah.d@example.com,C110,1400.00
-ST007,Mike Wilson,0556677889,mike.w@example.com,C104,1300.00
-ST008,Laura Miller,0667788990,laura.m@example.com,C109,2000.00
-ST009,David Garcia,0778899001,david.g@example.com,C106,1750.00
-ST010,Linda Rodriguez,0889900112,linda.r@example.com,C107,1900.00
+SE201414,Thanh Tran,0911566678,thanh2982006@gmail.com,MT01,6000000.0
+CE202215,Linh Pham,0987123456,linhpham@gmail.com,MT02,6000000.0
+DE213456,Hoang Nguyen,0978123987,hoangnguyen21@gmail.com,MT03,6000000.0
+HE191122,Minh Le,0934567890,minhle@gmail.com,MT04,6000000.0
+QE213344,Anh Bui,0965123789,anhbui@gmail.com,MT05,6000000.0
+SE201234,Nam Do,0901234567,namdo@gmail.com,MT06,6000000.0
+CE202678,Thao Vo,0912345678,thaovo@gmail.com,MT07,6000000.0
+DE184321,Kien Phan,0923456789,kienphan@gmail.com,MT08,6000000.0
+HE175678,Hoa Tran,0938765432,hoatran@gmail.com,MT09,6000000.0
+QE196789,Long Vu,0945678123,longvu@gmail.com,MT10,6000000.0

@@ -6,12 +6,12 @@ public class Student {
     private String phoneNumber;
     private String email;
     private String mountainCode;
-    private double tuitionFee;
+    private double tuitionFee = 6000000.00;
 
     public Student() {
     }
 
-    public Student(String studentID, String email, String phoneNumber, String name, String mountainCode, double tuitionFee) {
+    public Student(String studentID, String name, String phoneNumber,String email, String mountainCode, double tuitionFee) {
         this.studentID = studentID;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -70,7 +70,19 @@ public class Student {
 
     @Override
     public String toString() {
-        return String.format("%s | %s | %s | %s | %s | %.0f",
+        return String.format("Student ID: %s\n" +
+                             "Name      : %s\n" +
+                             "Phone     : %s\n" +
+                             "Email     : %s\n" +
+                             "Mountain  : %s\n" +
+                             "Tuition   : %.2f\n",
+
                 studentID, name, phoneNumber, email, mountainCode, tuitionFee);
     }
+
+    public String toCSV() {
+        return String.format("%s | %s | %s | %s | %.2f\n" +
+                studentID, name, phoneNumber, mountainCode, tuitionFee);
+    }
 }
+
