@@ -52,7 +52,6 @@ public class Students {
         for (Student s : list) {
             if (s.getName().toLowerCase().contains(kw)){
                 result.addStudent(s);
-                System.out.println(s.toString());
             }
         }
         return result;
@@ -66,7 +65,6 @@ public class Students {
         for (Student s : list) {
             if (s.getStudentID().toLowerCase().contains(camp)){
                 result.addStudent(s);
-                System.out.println(s.toString());
             }
         }
         return result;
@@ -81,7 +79,6 @@ public class Students {
         for (Student s : list) {
             if (s.getMountainCode().toLowerCase().contains(mCode)){
                 result.addStudent(s);
-                System.out.println(s.toString());
             }
         }
         return result;
@@ -112,7 +109,6 @@ public class Students {
         float total = 0;
         for(Student stu : list){
             total += stu.getTuitionFee();
-            System.out.println(total);
         }
         return total;
     }

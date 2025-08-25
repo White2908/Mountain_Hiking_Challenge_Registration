@@ -46,12 +46,12 @@ public class Mountains {
         System.out.println("-------------------------------------------------");
         for(Mountain m : list){
             Students byMountain = s.searchByMountain(m.getCode());
-            byMountain.display();
+            //byMountain.display();
 
             if(!byMountain.isEmpty()){
                 total = byMountain.size();
                 cost = byMountain.totalTuitionFee();
-                System.out.println(m.getCode() + "  | " + total + "  | " + cost);
+                System.out.println(String.format("%-11s | %-22d | %-10.2f",m.getCode(), total, cost));
             }
         }
 

@@ -11,11 +11,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Mountains mountains = new Mountains();
         mountains.loadFromCSV("resource/MountainList.csv");
-        mountains.display();
 
         Students students = new Students();
         students.loadFromCSV("resource/StudentList.csv");
-        students.display();
 
         RegistrationController controller = new RegistrationController(students, mountains);
 
@@ -24,7 +22,6 @@ public class Main {
             System.out.print(MenuView.MAIN_MENU);
             System.out.print(MenuView.ENTER_OPTION);
 
-            // Read the whole line and parse, avoiding nextInt()/nextLine() mix-ups
             String optLine = sc.nextLine().trim();
             if (optLine.isEmpty()) continue;
 
@@ -60,10 +57,11 @@ public class Main {
                         System.out.print(MenuView.ENTER_Y_OR_N);
                         if (sc.nextLine().trim().equalsIgnoreCase("Y")) {
                             students.removeById(delId);
+                            System.out.println(MenuView.SUCCESS_DELETE);
+                            students.display();
                         } else {
                             System.out.println("Canceled.");
                         }
-                        students.display();
                     } else {
                         System.out.println(MenuView.INVALID_ID);
                     }
@@ -85,10 +83,13 @@ public class Main {
                     mountains.saveFromCSV("resource/MountainList.csv");
                     students.saveFromCSV("resource/StudentList.csv");
                     System.out.println(MenuView.SUCCESS_SAVE);
+                case 9:
+                    break;
 
                 default:
-                    System.out.println("Unsupported option.");
+                    System.out.println("Invalid option.");
             }
+            System.out.println("Press ENTER to continue.");
             sc.nextLine();
         }
     }
